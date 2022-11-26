@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bon anniversaire, Eloїse!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/giftbox.png" type="image/x-icon">
+</head>
+<body>
+    <h1>Happy birthday!</h1>
+    <h2>here, have a little gift</h2>
+    <div class="img">
+        <img src="./img/up.svg" id="up">
+        <img src="./img/down.svg" id="down">
+    </div>
+    <img src="./img/Monya.png" alt="monya" class="monya">
+    <script>
+        const img = document.querySelector('.img').children;
+        const monya = document.querySelector('.monya');
+        let clicked = false;
+
+        img[0].onclick = img[1].onclick = monya.onclick = () => {
+            if(!clicked) {
+                clicked = true;
+                img[0].classList.add('hidden-up')
+                img[1].classList.add('hidden-down')
+                monya.classList.add("shown")
+            } else {
+                clicked = false;
+                img[0].classList.remove('hidden-up')
+                img[1].classList.remove('hidden-down')
+                monya.classList.remove("shown")
+            }
+        }
+    </script>
+</body>
+</html>
